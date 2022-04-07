@@ -1,0 +1,20 @@
+
+:root {
+    --mau-color:rgb(87, 81, 81);
+}
+
+caption {
+    background-color: aqua;
+    padding: 10px;
+}
+
+table {
+    background-color: rgb(219, 219, 146);
+    border-collapse: collapse;
+    width: 500px;
+}
+
+tr,td {
+    padding: 10px;
+    color: var(--mau-color);
+}

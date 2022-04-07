@@ -1,0 +1,40 @@
+
+:root {
+    --text-color:rgb(70, 125, 220);)
+}
+.button {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 4px;
+    color: var(--text-color) ;
+    text-shadow: #dddd;
+}
+.btn {
+    margin: 0 10px auto;
+}
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+caption {
+    color: #dddd;
+    background-color: rgb(48, 45, 45);
+    padding: 10px;
+    font-size: 20px;
+}
+
+tr,td {
+    font-size: 20px;
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: rgba(177, 158, 158, 0.2);
+    font-family: serif;
+    columns: #dddd;
+    width: 500px;
+    
+}
+
