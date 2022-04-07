@@ -1,0 +1,29 @@
+body {
+    padding: 50px;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+td, th {
+    padding: 20px;
+    border: 1px solid black;
+}
+th {
+    font-family: 'Patua One', cursive;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    background-color: red;
+    columns: #fff;
+    padding: 20px;
+}
+td {
+    text-align: center;
+    font-weight: 100;
+    border-bottom: 1px solid #e0e0e0;
+}
+.hover {
+    background:red;
+}
