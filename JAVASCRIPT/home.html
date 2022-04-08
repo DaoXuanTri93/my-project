@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task</title>
+    <!-- <link rel="stylesheet" href="home.js"> -->
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Nhập A</td>
+            <td><input id="number1" class="number" type="number"></td>
+        </tr>
+        <tr>
+            <td>Nhập B</td>
+            <td><input id="number2" class="number" type="number"></td>
+        </tr>
+        <tr>
+            <td>X là </td>
+            <td><input type="number"  readonly id="tongx"></td>
+        </tr>
+        <tr>
+            <td><button onclick="ketqua()">Kết quả</button>
+            </td>
+        </tr>
+    </table>
+
+
+    <script>
+        function ketqua() {
+            let a = Number(document.getElementsByClassName("number")[0].value);
+            let b = Number(document.getElementsByClassName("number")[1].value);
+            
+            let x = -b / a;
+            document.getElementById("tongx").value = x;
+        }
+    </script>
+</body>
+
+</html>

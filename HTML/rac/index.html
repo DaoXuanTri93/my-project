@@ -1,0 +1,96 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and Table</title>
+</head>
+
+<body>
+    <!--  lam quen FORM and TABLE -->
+
+
+    <!-- thong tin nguoi dang nhap -->
+
+
+    <form action="action_page.html" method="get">
+        <fieldset style="width: 300px;">
+            <legend>Legened</legend>
+            <label for="">First name:</label> <br>
+            <input type="text" name="firstname" value="DAO"><br>
+            <label for="">Last name:</label> <br>
+            <input type="text" name="lastname" value="TRI"><br>
+            <label for="">Password:</label><br>
+            <input type="password" name="password" value=""><br><br>
+            <input type="Reset" name="reset" value="Reset">
+            <input type="submit" value="Submit"> <br>
+        </fieldset> <br>
+
+        <!-- day la element RADIO -->
+
+
+        <fieldset style="width: 300px;">
+            <legend>choose</legend>
+            <label for="">hay chon ngon ngu ban thich</label><br>
+            <label for="">java</label>
+            <input type="radio" name="radiooo" value="css" checked><br>
+            <label for="">Php</label>
+            <input type="radio" name="radiooo" value="css"><br>
+            <label for="javascript">JavaScript</label>
+            <input type="radio" name="radiooo" value="css"><br>
+
+        </fieldset> <br>
+
+        <!-- day la Checkbox -->
+        <fieldset style="width: 300px;">
+            <legend>choose</legend>
+            <label for="">Ban thich mau xe nao: </label> <br>
+            <label for="">AUDI</label>
+            <input type="checkbox" name="checkbox">
+            <label for="">INOVA</label>
+            <input type="checkbox" name="checkbox">
+            <label for="">MEC</label>
+            <input type="checkbox" name="checkbox">
+        </fieldset> <br>
+
+        <!-- day la button element -->
+
+
+        <button type="button">
+            <img src="img/icon-google.png" alt="button" style="height: 20px;" 
+            onclick="alert('Day la Button')">
+        </button> <br><br>
+
+        <!-- thong tin tim kiem -->
+
+        <input type="text" name="q">
+        <input type="submit" value="Seach"><br> <br>
+
+        <!-- the textarea -->
+        <label for="">Y kien ca nhan : </label> <br>
+        <textarea name="" id="" cols="43" rows="10">nhap noi dung o day: </textarea>
+    </form>
+
+    <!-- day la select va option -->
+    <label for="">Thanh pho dang song :</label>
+    <select name="city">
+        <option value="HUE">Hue</option>
+        <option value="HUE">Da Nang</option>
+        <option value="HUE">Quang Tri</option>
+        <option value="HUE">Quang Binh</option>
+    </select><br><br>
+    <label for="">Thanh pho dang song :</label>
+    <select name="city" multiple>
+        <option value="HUE">Hue</option>
+        <option value="HUE">Da Nang</option>
+        <option value="HUE">Quang Tri</option>
+        <option value="HUE">Quang Binh</option>
+    </select>
+<audio src="https://www.youtube.com/watch?v=0_dcGHPvmv0&ab_channel=NTMusicTrends"></audio>
+
+
+
+</body>
+
+</html>
