@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+// debugger
+        var login = prompt('Nhap ten dang nhap', '');
+        if (login == 'Admin') {
+            var admin = prompt('nhap mat khau Admin', '');
+            // string == null ==> false
+            if (admin !== null) {
+                alert('Canceled');
+            } else {
+                alert('Wrong password');
+            }
+        } else if (login == null) {
+            alert('Canceled');
+        } else {
+            alert('i dont know you');
+        }
+        // debugger
+
+    </script>
+
+</body>
+
+</html>
