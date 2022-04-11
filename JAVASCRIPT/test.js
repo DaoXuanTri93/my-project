@@ -1,7 +1,16 @@
 
-function sum(a,b) {
-    return a.toString() + b.toString();
-}
+let emailkey = 'email';
+
+var address = 'address';
+var myInfo = {
+    name : 'Xuan Tri',
+    age : 16,
+    address: 'Hue, VN',
+    [emailkey]: 'day la email @',
+    [address]: 'la new',
+    getName: function(){
+        return myInfo.name;
+    }
 var tong = sum(30,2);
 console.log(tong);
 
