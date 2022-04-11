@@ -50,4 +50,7 @@ function phepChia(){
 }
 
 
-
+var i = 1;
+var j = '2';
+ var k = i + j; 
+ console.log(k);
