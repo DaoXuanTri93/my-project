@@ -1,0 +1,25 @@
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+.bangKetqua {
+    width: 366px;
+    padding: 15px;
+}
+.table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+}
+.table tr {
+    padding: 15px;
+    border: 1px solid black;
+}
+.table tr>td {
+    border: 1px solid black;
+}

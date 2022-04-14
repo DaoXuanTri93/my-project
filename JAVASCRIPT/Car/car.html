@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="right.jpg" alt="xe hong" id="imgCar" style="position: relative; 
+    left : 0px;
+    top: 0px;    
+    ">
+    <!-- qua ben phai -->
+    <button id="btn" style="position: fixed; 
+    right : 20px; 
+    bottom: 20px;
+    padding:15px" onclick="moveRight()">
+        MoveRight</button>
+
+    <!-- qua ben trai -->
+    <button id="btn" style="position: fixed; 
+    right : 200px; 
+    bottom: 20px;
+    padding:15px" onclick="moveLeft()">
+        MoveLeft</button>
+
+    <!-- di xuong -->
+    <button id="btn" style="position: fixed; 
+    right : 500px; 
+    bottom: 20px;
+    padding:15px" onclick="moveDown()" onkeyup="moveDown()">
+        MoveDown</button>
+
+
+    <!-- di len -->
+    <button id="btn" style="position: fixed; 
+    right : 700px; 
+    bottom: 20px;
+    padding:15px" onclick="moveUp()">
+        MoveUp</button>
+
+
+
+    <script src="car.js"></script>
+</body>
+
+</html>

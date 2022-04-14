@@ -1,88 +1,69 @@
-// function tongHaiSo() {
-//     var a = Number(document.getElementsByClassName('number')[0].value);
-//     var b = Number(document.getElementsByClassName('number')[1].value);
-//     var c = a + b;
-//     document.getElementById('result').value = c;
-// // }
-// var date = 9;
-// switch (date) {
-//     case 2: break;
-//     case 3:
-//         console.log('hom nay la thu 3');
-//         break;
-//     case 4:
-//         console.log('hom nay la thu 4');
-//         break;
-//     case 5:
-//         console.log('hom nay la thu 5');
-//         break;
-//     default:
-//     console.log('khong biet');
-// }
+// // var array = [
+// //   {
+// //     id : 1,
+// //     name : 'java',
+// //     coin : 0
+// //   },
+// //   {
+// //     id : 2,
+// //     name : 'PHP',
+// //     coin : 3
+// //   },
+// //   {
+// //     id : 3,
+// //     name : 'RUBY',
+// //     coin : 1
+// //   },
+// //   {
+// //     id : 4,
+// //     name : 'JS',
+// //     coin : 4
+// //   },
+// //   {
+// //     id : 5,
+// //     name : 'RUBY',
+// //     coin : 10
+// //   },
+// // ];
 
-// function ngayThang(){
-//     document.getElementById('demo').innerHTML= Date();
-// }
-// function ngayThangCu(){
-//     document.getElementById('demo').innerHTML;
-// }
-// var languages = [
-//     'java',
-//     'php',
-//     'ruby'
-// ]
-// function loop(start,end,cb){
-//     if(start >= end){
+// // // ham forEach() : duyet qua tung phan tu cua mang
 
-//     }
-// }
+// // /* array.forEach(function(list,index){
+// //   console.log(index,list);
+// // });
+// // */
 
-// loop(0,languages.length-1,function(index){
-//     console.log('index' + index);
+// // // ham every , tra ve kieu bolean
+// // var newCoin = array.map(function(value){
+// //  console.log(value.coin);
+// // });
+
+// // console.log(newCoin);
+
+
+// // let dtb = 4;
+
+// // let a = (`0<= ${dtb} >= 5 ? yeu : 5 < ${dtb} >= 7 ? trung binh : 7 < ${dtb} >= 8 ? kha : 8 < ${dtb} >=9 ? gioi : 9 < ${dtb} <= 10 ? Xuat sac : khong hop le`);
+
+// // console.log(a);
+
+// var heading = document.querySelector('.heading');
+// // heading.style.width = '100px';
+// // heading.style.height = '200px';
+// // heading.style.backgroundColor = 'red';
+
+// Object.assign(heading.style, {
+//   width: '100px',
+// height :'200px',
+// backgroundColor :'green'
+
 // });
 
-// function giaiThua(value){
-//     var output = 1;
-//     for(var i = value; i > 0; i--){
-//         output = output * i
-//     }
-//     return output;
-// }
-// console.log(giaiThua(6));
-// var myArray = [
-//     [1,2],
-//     [3,4],
-//     [5,6]
-// ]
+// console.log(heading.style.backgroundColor);
 
-// let number = 5;
-// number++;
-// number = number - 1;
-// console.log(number);
 
-// // console.log(myArray[2][0]);
-// // for(var i in myArray){
-// //     console.log(myArray[i][0,1]);
-// // }
-// var myArrayLenght = myArray.length;
-// for(var i = 0 ; i < myArrayLenght; i++){
-//     // console.log(myArray[i]);
-//     for(var j = 0; j < myArray[i].length; j++){
-//         console.log(myArray[i][j]);
-//     }
-// }
-let day = "Mon";
-let message = "";
+let classlist = document.querySelector('.heading');
+classlist.classList.add('heading-1');
 
-switch (day) {
-  case "Mon": message = "Ngày đầu tuần";
-  break;
-  case "Wed": message = "Ngày giữa tuần";
-  break;
-  case "Sat":
-  case "Sun":
-    // message = "Ngày nghỉ";
-    // console.log(message);
-}
 
-console.log(message);
+console.log(classlist.classList.contains('heading-1'));
