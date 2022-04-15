@@ -7,11 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="maytinh.css">
+    <style>
+        .table tr td {
+            padding: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- bai tap may tinh -->
-    <table class="table">
+    <table class="table" border="1">
         <tr>
             <input type="text" class="bangKetqua" id="ketqua" style="text-align: right;" readonly>
         </tr>
@@ -42,15 +47,23 @@
     </table>
 
     <script>
-    var manHinh = false;
+    var congtac = false;
         var ketqua = document.getElementById('ketqua');
         function nhapSo(so){
-            ketqua.value += so;
-            manHinh = true;
+           congtac = false;
+               ketqua.value += so;
+         
+            console.log(congtac);
         }
     
         function toanTu(toanTu){
-            ketqua.value += toanTu;
+            if (!congtac && ketqua.value != ''){
+                ketqua.value += toanTu;
+                return congtac = true;
+            }else {
+                alert('cong tac = true');
+            }
+            
              
         }
 
@@ -63,6 +76,9 @@
             if(tong == 'C'){
                 return ketqua.value = '';
             }
+            // if (!congtac && ketqua.value != ''){
+            //     screen.value += toanTu;
+            // }
 
         }   
     </script>

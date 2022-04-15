@@ -27,7 +27,7 @@ function moveLeft() {
 function moveDown() {
     let car = document.getElementById('imgCar');
     car.style.transform  = 'rotate(90deg)';
-    if (parseInt(car.style.top) +10 < window.innerHeight) {
+    if (parseInt(car.style.top) + 100 < window.innerHeight) {
         car.style.top = parseInt(car.style.top) + step + 'px';
     }
 }
@@ -35,7 +35,7 @@ function moveUp() {
     let car = document.getElementById('imgCar');
     car.style.transform = 'rotate(-90deg)';
     // console.log(car.style.top);
-    if(parseInt(car.style.top) > 0){
+    if(parseInt(car.style.top) - 30 > 0){
         // console.log(car.style.top);
 
         car.style.top = parseInt(car.style.top) - step + 'px'

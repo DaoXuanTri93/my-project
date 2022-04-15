@@ -2,6 +2,7 @@
 
 function moveRight() {
     let moveRight = document.getElementById('nobita');
+    // moveRight.style.left = parseInt(moveRight.style.left) + 50 + 'px';
     moveRight.style.left = parseInt(moveRight.style.left) + 50 + 'px';
 }
 function moveLeft() {
@@ -17,7 +18,8 @@ function moveDown() {
     moveRight.style.top = parseInt(moveRight.style.top) + 50 + 'px';
 }
 
-
+// let x = window.innerWidth ;
+// console.log(x);
 function controlNobita(value) {
     // alert(value.keyCode)
     switch (value.keyCode) {
