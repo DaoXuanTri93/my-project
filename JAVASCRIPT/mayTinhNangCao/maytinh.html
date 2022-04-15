@@ -13,36 +13,60 @@
     <!-- bai tap may tinh -->
     <table class="table">
         <tr>
-            <input type="number" class="bangKetqua" id="ketqua" readonly>
+            <input type="text" class="bangKetqua" id="ketqua" style="text-align: right;" readonly>
         </tr>
         <tr>
-            <td onclick="bangMayTinh()" id="so1">1</td>
-            <td onclick="bangMayTinh()">2</td>
-            <td onclick="bangMayTinh()">3</td>
-            <td onclick="bangMayTinh()">+</td>
+            <td onclick = "nhapSo(1)" >1</td>
+            <td onclick="nhapSo(2)">2</td>
+            <td onclick>3</td>
+            <td onclick="toanTu('+')"> + </td>
         </tr>
         <tr>
-            <td onclick="bangMayTinh()">4</td>
-            <td onclick="bangMayTinh()">5</td>
-            <td onclick="bangMayTinh()">6</td>
+            <td onclick>4</td>
+            <td onclick>5</td>
+            <td onclick>6</td>
             <td>-</td>
         </tr>
         <tr>
-            <td onclick="bangMayTinh()">7</td>
-            <td onclick="bangMayTinh()">8</td>
-            <td onclick="bangMayTinh()">9</td>
+            <td onclick>7</td>
+            <td onclick>8</td>
+            <td onclick>9</td>
             <td>x</td>
         </tr>
         <tr>
-            <td>C</td>
-            <td onclick="bangMayTinh()">0</td>
-            <td>=</td>
+            <td onclick="tong('C')">C</td>
+            <td>0</td>
+            <td onclick="tong('=')">=</td>
             <td>/</td>
         </tr>
     </table>
 
+    <script>
+    var manHinh = false;
+        var ketqua = document.getElementById('ketqua');
+        function nhapSo(so){
+            ketqua.value += so;
+            manHinh = true;
+        }
+    
+        function toanTu(toanTu){
+            ketqua.value += toanTu;
+             
+        }
 
+        function tong(tong){
+        
+            if(tong == '=' && ketqua.value != ''){
+                return ketqua.value =  eval(ketqua.value)
+            }
+
+            if(tong == 'C'){
+                return ketqua.value = '';
+            }
+
+        }   
+    </script>
 </body>
-<script src="maytinh.js"></script>
+
 
 </html>

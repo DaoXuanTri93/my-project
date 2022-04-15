@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="number1" type="number">
+    <input id="number2" type="number">
+    <button onclick="cong()">Addition(+)</button>
+    <!-- <button onclick="tru()" >Addition(-)</button>
+    <button onclick="nhan()">Addition(*)</button>
+    <button onclick="chia()">Addition(/)</button> -->
+    <p>Result</p>
+    <span id="result"> </span>
+    <script>
+        // debugger
+        var number1 = document.getElementById('number1');
+        // var number2 = Number(document.getElementById('number2'));
+        // console.log(typeof number1);
+        function cong() {
+            let numberTong = parseInt(number1);
+            console.log(typeof numberTong);
+            // var number3 = number1 + number2;
+            // console.log(number3);
+            // document.getElementById('result').innerHTML = number3;
+        }
+        // function cong(){
+        //     console.log(number1);
+        // }
+    </script>
+</body>
+
+</html>
