@@ -11,6 +11,20 @@
         .table tr td {
             padding: 20px;
         }
+        .bangKetqua{
+            padding: 5px;
+            height: 100%;
+            width: 200px;
+        }
+        .table {
+            background-color: antiquewhite;
+            position: relative;
+            left: 100px;
+            
+        }
+        .bangKetqua {
+            color: red;
+        }
     </style>
 </head>
 
@@ -18,62 +32,63 @@
     <!-- bai tap may tinh -->
     <table class="table" border="1">
         <tr>
-            <input type="text" class="bangKetqua" id="ketqua" style="text-align: right;" readonly>
+            <td colspan="4" style="padding: 5px"><input type="text" class="bangKetqua" id="ketqua" style="text-align: right;" readonly></td>
         </tr>
         <tr>
-            <td onclick = "nhapSo(1)" >1</td>
+            <td onclick="nhapSo(1)">1</td>
             <td onclick="nhapSo(2)">2</td>
-            <td onclick>3</td>
+            <td onclick="nhapSo(3)">3</td>
             <td onclick="toanTu('+')"> + </td>
         </tr>
         <tr>
-            <td onclick>4</td>
-            <td onclick>5</td>
-            <td onclick>6</td>
-            <td>-</td>
+            <td onclick="nhapSo(4)">4</td>
+            <td onclick="nhapSo(5)">5</td>
+            <td onclick="nhapSo(6)">6</td>
+            <td onclick="toanTu('-')">-</td>
         </tr>
         <tr>
-            <td onclick>7</td>
-            <td onclick>8</td>
-            <td onclick>9</td>
-            <td>x</td>
+            <td onclick="nhapSo(7)">7</td>
+            <td onclick="nhapSo(8)">8</td>
+            <td onclick="nhapSo(9)">9</td>
+            <td onclick="toanTu('x')">x</td>
         </tr>
         <tr>
             <td onclick="tong('C')">C</td>
-            <td>0</td>
+            <td onclick="nhapSo(0)">0</td>
             <td onclick="tong('=')">=</td>
-            <td>/</td>
+            <td onclick="toanTu('/')">/</td>
         </tr>
     </table>
 
     <script>
-    var congtac = false;
+        var congtac = false;
         var ketqua = document.getElementById('ketqua');
-        function nhapSo(so){
-           congtac = false;
-               ketqua.value += so;
-         
+        function nhapSo(so) {
+            congtac = false;
+            ketqua.value += so;
+
             console.log(congtac);
         }
-    
-        function toanTu(toanTu){
-            if (!congtac && ketqua.value != ''){
+
+        function toanTu(toanTu) {
+            if (!congtac && ketqua.value != '') {
                 ketqua.value += toanTu;
                 return congtac = true;
-            }else {
-                alert('cong tac = true');
             }
-            
-             
+            // else {
+            //     alert('cong tac = true');
+            // }
+
+
         }
 
-        function tong(tong){
-        
-            if(tong == '=' && ketqua.value != ''){
-                return ketqua.value =  eval(ketqua.value)
+        function tong(tong) {
+
+            if (tong == '=' && ketqua.value != '') {
+                return ketqua.value = eval(ketqua.value)
             }
 
-            if(tong == 'C'){
+            if (tong == 'C') {
                 return ketqua.value = '';
             }
             // if (!congtac && ketqua.value != ''){

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            background-color: rgb(174, 154, 154);
+            color: rgb(0, 253, 0);
+            border: 1px solid rgb(255, 213, 0);
+            box-shadow: 10px 10px 5px rgb(204, 37, 185);
+        }
+        table tr td {
+            padding: 10px;
+            text-shadow: 10px 15px 1px rgb(234, 234, 0);
+        }
+    </style>
+</head>
+<body>
+    <script>
+let i,j ;
+document.write('<table>');
+
+        for(i = 1; i <= 10; i++){
+            for(j = 1; j <= 10; j++){
+                document.write(`<td> ${i*j} </td>`)
+            }
+document.write('<tr>')
+        }
+
+       
+
+    </script>
+</body>
+</html>
