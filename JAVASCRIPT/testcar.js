@@ -1,16 +1,6 @@
+// <!-- hien thi chia het cho 5 bang tat ca cac cach -->
 
 
-
-
-debugger
-let count = 0;
-while (count++ < 10) {
-    count++;
-};
-console.log(count);
-// debugger
-// let count = 0;
-// do {
-//     count++;
-// } while (count++ < 10);
-// console.log(count);
+for(let i = 0; i <= 10; i+=5){
+    console.log(i);
+}
