@@ -7,7 +7,7 @@
 .navigation {
     width: 100%;
     background-color: rgba(232, 216, 193, 0.5);
-    position: fixed;
+    position: relative;
 }
 .navigation ul {
     text-align: center;

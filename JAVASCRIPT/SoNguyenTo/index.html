@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let i = 2;
+        // let number = 20;
+        // for ( i; i < number ; i++){
+        //     if(i == 2){
+        //         document.write(i + 'day la SNT');
+
+        //     }else if (number % i == 0){
+        //         document.write(i + ' day la SNT <br/> ' );
+        //     } else {
+        //         document.write(i + 'day ko fai la SNT <br/>');
+        //    }
+        // }
+
+
+        var n = 1;
+
+        if (n < 2) {
+            document.write(n + ' day ko fai la SNT')
+        }
+        else {
+            // lặp từ 2 tới n-1
+            for (var i = 2; i < n - 1; i++) {
+                if (n % i == 0) {
+                    document.write( n + 'ko fai SNT')
+                }else {
+                    document.write(n + ' day la SNT')
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
