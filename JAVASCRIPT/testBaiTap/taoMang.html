@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function createArrs(createArr,createArrValue) {
+            let arr = new Array();
+            // let createArr = Number(prompt('so luong cua mang'));
+            // let createArrValue = Number(prompt('gia tri phan tu cua mang'));
+            for (let i = 0; i < createArr; i++) {
+                arr[i] = new Array()
+                for (let j = 0; j < createArrValue; j++) {
+                    arr[i][j] = 0;
+                }
+            }
+            return arr;
+        }
+    let createArr = Number(prompt('so luong cua mang'));
+    let createArrValue = Number(prompt('gia tri phan tu cua mang'));
+        console.log(createArrs(createArr,createArrValue));
+    </script>
+</body>
+</html>
