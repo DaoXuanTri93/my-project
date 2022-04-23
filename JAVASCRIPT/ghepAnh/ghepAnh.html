@@ -1,95 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .democlass {
-            box-shadow: rgb(0, 130, 244) 4px 4px 9px;
-            /* background-color: black; */
-        }
-        img {
-            width: 600px;
-            height: 110;
-        }
-    </style>
 </head>
-
 <body>
-    <div><img src="1.png" id="anh1" onclick="chuyenAnh1()"></div>
-    <div><img src="4.png" id="anh2" onclick="chuyenAnh2()"></div>
-    <div><img src="7.png" id="anh3" onclick="chuyenAnh3()"></div>
-    <div><img src="10.png" id="anh4" onclick="chuyenAnh4()"></div>
-    <div><img src="13.png" id="anh5" onclick="chuyenAnh5()"></div>
+       <div><img src="anhGau1.png" alt="anh hong" onclick="clickImg1()" class="imgGau1"></div> 
+        <div><img src="anhGau2.png" alt="anh hong" class="imgGau2" onclick="clickImg2()"></div>
+    <button class="btn" onclick="btnClick()">
+        click here
+    </button>
 
-    <script>
-
-        let img1 = document.querySelector('#anh1');
-        let img2 = document.querySelector('#anh2');
-        let img3 = document.querySelector('#anh3');
-        let img4 = document.querySelector('#anh4');
-        let img5 = document.querySelector('#anh5');
-
-        let anhDung1 = 'http://127.0.0.1:5500/JAVASCRIPT/ghepAnh/1.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/4.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/7.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/10.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/13.png';
-        let anhDung2 = 'http://127.0.0.1:5500/JAVASCRIPT/ghepAnh/2.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/5.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/8.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/11.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/14.png';
-        let anhDung3 = 'http://127.0.0.1:5500/JAVASCRIPT/ghepAnh/3.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/6.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/9.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/12.pnghttp://127.0.0.1:5500/JAVASCRIPT/ghepAnh/15.png';
-
-
-        img1.src = `${Math.floor(Math.random() * (3) + 1)}.png`;// min = 1, max = 3
-        img2.src = `${Math.floor(Math.random() * (3) + 4)}.png`;//min = 4, max = 6
-        img3.src = `${Math.floor(Math.random() * (3) + 7)}.png`;//min = 7, max 9
-        img4.src = `${Math.floor(Math.random() * (3) + 10)}.png`;//min = 10, max 12
-        img5.src = `${Math.floor(Math.random() * (3) + 13)}.png`;//min = 13, max 15
-
-        let kiemTra = "";
-        function chuyenAnh1() {
-            img1.src = `${Math.floor(Math.random() * (3) + 1)}.png`;// min = 1, max = 3
-            kiemTra = img1.src + img2.src + img3.src + img4.src + img5.src
-            // console.log(kiemTra);
-            if (kiemTra == anhDung1 || kiemTra == anhDung2 || kiemTra == anhDung3) {
-                win();
-            }
-        }
-        function chuyenAnh2() {
-            img2.src = `${Math.floor(Math.random() * (3) + 4)}.png`;//min = 4, max = 6
-            kiemTra = img1.src + img2.src + img3.src + img4.src + img5.src
-            if (kiemTra == anhDung1 || kiemTra == anhDung2 || kiemTra == anhDung3) {
-                win();
-            }
-        }
-        function chuyenAnh3() {
-            img3.src = `${Math.floor(Math.random() * (3) + 7)}.png`;//min = 7, max 9
-            kiemTra = img1.src + img2.src + img3.src + img4.src + img5.src
-            if (kiemTra == anhDung1 || kiemTra == anhDung2 || kiemTra == anhDung3) {
-                win();
-            }
-        }
-        function chuyenAnh4() {
-            img4.src = `${Math.floor(Math.random() * (3) + 10)}.png`;//min = 10, max 12
-            kiemTra = img1.src + img2.src + img3.src + img4.src + img5.src
-            if (kiemTra == anhDung1 || kiemTra == anhDung2 || kiemTra == anhDung3) {
-                win();
-            }
-        }
-        function chuyenAnh5() {
-            img5.src = `${Math.floor(Math.random() * (3) + 13)}.png`;//min = 13, max 15
-            kiemTra = img1.src + img2.src + img3.src + img4.src + img5.src
-            if (kiemTra == anhDung1 || kiemTra == anhDung2 || kiemTra == anhDung3) {
-                win();
-            }
-        }
-        function win(){         
-            alert('chuc mung ban');
-            img1.setAttribute('class','democlass');
-            img2.setAttribute('class','democlass');
-            img3.setAttribute('class','democlass');
-            img4.setAttribute('class','democlass');
-            img5.setAttribute('class','democlass');
-        }
-    </script>
+        <script src="ghepAnh.js"></script>
 </body>
 
 </html>

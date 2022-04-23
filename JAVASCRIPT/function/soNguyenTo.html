@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function kiem tra so nguyen to
+        function checkSoNguyenTo(number) {
+            if (number == 2) {
+                return true;
+            } else if (number > 2) {
+                for (let i = 2; i < number; i++) {
+                    if (number % i == 0) {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        let number = 2;
+        let count = 0;
+        let checkGioiHan = 10;
+        while (count < checkGioiHan) {
+            checkSoNguyenTo(number);      
+            
+            if (true) {
+                document.write(number + '<br>');
+                count++;
+            }
+            number++;
+        }
+    </script>
+
+
+
+</body>
+
+</html>
