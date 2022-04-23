@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //bai 1
+        // let arrayColor = ['red','green','yellow','violet','black']
+        // document.write(arrayColor.toString() + '<br>') 
+        // document.write(arrayColor.join()+ '<br>')
+        // document.write(arrayColor.join('-'))
+
+
+
+        //bai2
+        // let number = 12344672;
+        // let str = number.toString();
+        // let result = [str[0]];
+        // // console.log(giaTri);
+        // for (let i = 0; i < str.length; i++) {
+        //     if (str[i - 1] % 2 == 0 && str[i] % 2 === 0) {
+        //         result.push('-' + str[i]);
+        //     }else {
+        //         result.push(str[i])
+        //     }
+        // }
+        // console.log(result.join(''));
+
+
+
+        //bai 3
+        // let array = 'dAy la chuoI thuong';
+        // for (let i = 0; i < array.length;i++){
+        //     if(array[i] == array[i].toUpperCase()){
+        //         array[i].toLowerCase()
+        //     }else {
+        //         array[i].toUpperCase()
+        //     }
+        // }
+        // console.log(array);
+        var str = 'AddSDASDWeeeee';
+        const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+        const result = [];
+        let iMax = 20;
+        let jMax = 10;
+        let f = new Array();
+
+        for (i = 0; i < iMax; i++) {
+            f[i] = new Array();
+            for (j = 0; j < jMax; j++) {
+                f[i][j] = 0;
+            }
+        }
+        console.log(f.length);
+        console.log(f);
+
+        // for(let i = 0; i < str.length; i++){
+        //     if(UPPER.includes(str[i])){
+        //         result.push(str[i].toLowerCase())
+        //     }else if (LOWER.includes(str[i])){
+        //         result.push(str[i].toUpperCase())
+        //     } else {
+        //         result.push(str[i])
+        //     }
+        // }
+        // console.log(result.join(''));
+
+
+        // for (let i = 0; i < str.length; i++) {
+        //     if (UPPER.indexOf(str[i] !== -1)) {
+        //         result.push(str[i].toLowerCase())
+        //     } else if (LOWER.indexOf(str[i] !== -1)) {
+        //         result.push(str[i].toUpperCase())
+        //     } else {
+        //         result.push(str[i])
+        //     }
+        // }
+        // console.log(result.join(''));
+    </script>
+</body>
+
+</html>

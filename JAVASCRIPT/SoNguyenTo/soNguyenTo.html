@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Display</title>
+</head>
+
+<body>
+  <script>
+    // hien thi 20 so dau tien cua So NGUYEN TO
+    let checkGioihan = 5; //so nhap vao
+    let numberPrint = 2;
+    let count = 0;
+    while (count < checkGioihan) {
+      if (numberPrint == 2) {
+        console.log(numberPrint);
+        count++;
+      }
+      if (numberPrint > 2) {
+        for (let i = 2; i < numberPrint; i++) {
+          if (numberPrint % i == 0) {
+            break;
+          } else if (i == (numberPrint - 1)) {
+            console.log(numberPrint);
+            count++;
+          }
+        }
+      }
+      numberPrint++;
+
+    }
+  </script>
+</body>
+
+
+</html>

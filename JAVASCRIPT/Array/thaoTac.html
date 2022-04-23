@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="textValue">
+    <button id="add" onclick="addValue()">Add</button>
+    <button id="display" onclick="showDisplay()">Display</button>
+    <p id="showDisplay"></p>
+    <!-- <div class="showDisplay"></div> -->
+    <script>
+        let index = 0;
+        // let array = Array();
+        let array = [];
+        // console.log(typeof array);
+        function addValue(){
+            array[index] = document.getElementById('textValue').value;
+            
+            alert(`Đã thêm phần tử ${array[index]} và có index là ${index}`)
+            index++;
+            document.getElementById('textValue').value = '';
+        }
+
+        function showDisplay(){
+            // alert('aaaaaaaa')
+            let show = '<hr>';
+            for(let i = 0; i < array.length; i++){
+                show += `index ${i} có giá trị ${array[i]}`;
+            }
+            console.log(typeof show);
+            document.getElementById('showDisplay').innerHTML = show;
+        }
+
+    </script>
+</body>
+</html>

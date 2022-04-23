@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="tiengAnh">
+    <button onclick="translateDictionary()">Translate</button> <br>
+    <div></div>
+    <input type="text" id="tiengViet"> <br>
+
+</body>
+
+<script>
+    //b1 : lay gia tri cua arrayEnglish
+    //b2 so sanh index arrayEnglish voi arrayTiengViet
+    let arrayEnglish = ['Dog', 'Cat', 'Love', 'Red'];
+    let arrayTiengViet = ['Chó', 'Mèo', 'Tình Yêu', 'màu đỏ'];
+
+    function translateDictionary() {
+        let congTac = true;
+        let english = document.getElementById('tiengAnh').value;
+        for (let i = 0; i < arrayEnglish.length; i++) {
+            if (english == arrayEnglish[i]) {
+                congTac = false;
+                return document.getElementById('tiengViet').value = arrayTiengViet[i];             
+            }            
+        }
+        if(congTac){
+            alert('Chữ này chúng tôi chưa nghiên cứu');
+        }
+    }
+</script>
+
+</html>

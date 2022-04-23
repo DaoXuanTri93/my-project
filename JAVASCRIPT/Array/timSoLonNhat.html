@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <img src="anhGau1.png" alt="">
-    <img src="anhGau2.png" alt="">
-    <img src="anhGau3.png" alt="">
-    <img src="anhgau4.png" alt="">
-    <img src="anhGau5.png" alt="">
-    
+    <script>
+        let arr = [-1,0,2,4,5,1,3];
+        let max = arr[0];
+        for(let i = 0 ; i < arr.length; i++){
+            if(max < arr[i]){
+                max = arr[i]
+            }
+        }
+        console.log(max);
+    </script>
 </body>
 </html>
