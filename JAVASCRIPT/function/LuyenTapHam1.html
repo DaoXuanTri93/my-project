@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Nhap ten can tim</label>
+    <input type="text" name="" id="valueSeach">
+    <button onclick="checkStar()">Tim chom sao</button>
+    <div id="result"></div>
+    <script>
+//bai 1
+        // function alertMessage() {
+        //     alert('Xin Chao');
+        // }
+        // alertMessage();
+
+
+//bai 2
+    //     function doiSo(number){
+    //         number++;
+    //         return number;
+    //     }
+    //     let number = 1;
+    //     console.log(number);
+    //    console.log(doiSo(number));
+
+//bai 3
+    // function countNumber(a,b){
+    //     if (a > b){
+    //         alert(`${a} > ${b}`)
+    //     }else if(a < b){
+    //         return alert(a + b)
+    //     }
+    // }
+    // let a = 2;
+    // let b = 3;
+    // console.log(countNumber(a,b));
+
+
+
+
+//bai 4
+    // function addNumbers() {
+    //     firstNum = 4;
+    //     secondNum = 8;
+    //     result = firstNum + secondNum;
+    //     return  alert(result + ' la ket qua trong function')
+    // }
+    //     let result = 0;
+    //     alert(result + ' la ket qua ngoai function')
+    //     result = addNumbers(); 
+
+
+//bai 5
+    let nameStar = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+    let Constellation = ['Ursa Minor','Tarurus','Cygnus','Lyra','Aquila','Ursa Major','Leo']
+    
+        function checkStar(){
+            // alert('aaaaaa')
+            let congtac = true;
+            let star = document.getElementById('valueSeach').value;
+            for(let i = 0; i < nameStar.length; i++){
+               if(star == nameStar[i]){
+                   congtac = false;
+                   return document.getElementById('result').innerHTML = Constellation[i];
+               }
+            }
+            if(congtac){
+            alert('khong tim thay ket qua')
+        }
+        }
+      
+    
+    </script>
+
+
+
+
+</body>
+
+</html>

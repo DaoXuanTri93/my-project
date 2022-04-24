@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="Feet">Feet : </label>
+    <input type="number" name="Feet" id="Feet">  <br>
+    <button onclick="footToMeters()" >Swap footToMeters</button> <br>
+    <button onclick="metersToFoot()" >Swap metersToFoot </button> <br>
+
+    <label for="meters">Meters :</label>
+    <input type="number" name="meters" id="meters">
+    <div id="result-div"></div>
+    
+    <script>
+        function footToMeters(){
+            // alert('aaaaaaaaaa')
+            let foot = document.getElementById('Feet').value;
+            let meter = 0.305 * foot;
+            document.getElementById('result-div').innerHTML = `gia tri Feet sang Meters la ${meter}`;
+        }
+        function metersToFoot(){
+            // alert('aaaaa')
+            let meters = document.getElementById('meters').value;
+            let foots = 3.279  * meters;
+            document.getElementById('result-div').innerHTML = `gia tri Meter sang Foot la ${foots}`;
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
