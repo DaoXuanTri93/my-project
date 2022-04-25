@@ -10,7 +10,7 @@
 
 <body>
 
-<!-- <button id="btn">Bat dau tro choi</button> -->
+    <button id="btn">Bat dau tro choi</button>
 
     <script>
 
@@ -35,19 +35,19 @@
         //         break;
         //     } 
         // }
- 
 
-// tong 20 so fibonacci
-//         let tong = 0;
-//         for(i = 1 ; i <= 20; i ++){        
-//             temp = a + b;
-//             a = b;
-//             b = temp;
-//             // document.write(a + '<br>');
-//             tong += a;
-//         }
-//         document.write(tong);
-// tong 30 so dau tien % 7
+
+        // tong 20 so fibonacci
+        // let tong = 0;
+        // for(i = 1 ; i <= 20; i ++){        
+        //     temp = a + b;
+        //     a = b;
+        //     b = temp;
+        //     // document.write(a + '<br>');
+        //     tong += a;
+        // }
+        // document.write(tong);
+        // tong 30 so dau tien % 7
         //     let a = 1;
         //      let b = 0;
         //     let  temp;
@@ -78,19 +78,20 @@
 
         // nhap game may man
         // let btn = document.querySelector('#btn');
-        // btn.addEventListener('click',function(){
-           
-        //     do{
-        //         let number = parseInt(prompt('xin nhap so may man tu (0 - 9) vao day :'));
-        //         alert('so nay ko fai la so may man')
-        //         if (number == 5){
-        //             alert('chuc mung ban');
-        //         let number = parseInt(prompt('xin nhap so may man tu (0 - 9) vao day :'));
+        // btn.addEventListener('click', function () {
+            let count = 0;
+            do {
+                let a = prompt('nhap gia tri');
+                if (a == Math.floor(Math.random()*3 + 1)) {
+                    alert('chuc mung')
+                    break;
+                }
+            //   console.log(a);
+              count++;
+            }
+            while (count < 3);
+        
 
-        //     }
-        //     }while(false)
-
-        // });
 
 
 

@@ -24,13 +24,15 @@
 </head>
 
 <body>
+    <button onclick="showArr()">play</button>
+    <div id="caro"></div>
     <script>
         let arr = [
             [0, 0, 0],
             [0, 0, 0],
             [0, 0, 0]
         ];
-        // document.body.innerHTML = arr;
+        // document.body.innerHTML = button;
         let x_value = 10;
         let o_value = 1;
         // let player = player_1;
@@ -55,7 +57,7 @@
 
         function clickArr(row, col) {
             if (arr[row][col] != 0) {
-                alert('nuoc di nay ko duoc danh')
+                alert('nuoc di nay ko duoc danh');
             }
             else if (player == player_1) {
                 arr[row][col] = x_value;
@@ -72,22 +74,28 @@
                 for (let n = 0; n < arr[m].length; n++) {
                      if ((arr[m+1][n+1] == x_value && arr[m][n+1] == x_value && arr[m+2][n+1] == x_value) ||  // col o giua
                         (arr[m+1][n+1] == o_value && arr[m][n+1] == o_value && arr[m+2][n+1] == o_value)) { 
-                         alert('win');
-                        //  return showArr();
+                         alertWin();
                      } else if((arr[m+1][n+1] == x_value && arr[m+1][n] == x_value && arr[m+1][n+2] == x_value) ||  // row o giua
                         (arr[m+1][n+1] == o_value && arr[m+1][n] == o_value && arr[m+1][n+2] == o_value)){
-                         alert('win')
+                        alertWin();
                      } else if((arr[m+1][n+1] == x_value && arr[m][n+2] == x_value && arr[m+2][n+0] == x_value) || // cheo 
                      (arr[m+1][n+1] == o_value && arr[m][n+2] == o_value && arr[m+2][n+0] == o_value)){
-                        alert('win')
+                        alertWin();
                      } else if((arr[m+1][n+1] == x_value && arr[m][n] == x_value && arr[m+2][n+2] == x_value) ||  //cheo
                      (arr[m+1][n+1] == o_value && arr[m][n] == o_value && arr[m+2][n+2] == o_value)){
-                         alert('win')
+                        alertWin();
+                     } else if((arr[m][n] == x_value && arr[m][n+1] == x_value && arr[m][n+2] == x_value) ||  //ngang tren
+                     (arr[m][n] == o_value && arr[m][n+1] == o_value && arr[m][n+2] == o_value)){
+                        alertWin();
                      }
                 }
             }
         }
-
+        function alertWin(){
+            alert('win');
+            location.reload();
+            // console.log('asdasdsa');
+        }
             // clickArr();
             // showArr();
         

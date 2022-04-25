@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let person = {
+        //     name: ['Bob', 'Smith'],
+        //     age: 32,
+        //     gender: 'male',
+        //     interests: ['music', 'skiing'],
+        //     bio: function () {
+        //        console.log(this.name[0]);
+        //     },
+        //     greeting: function () {
+        //         alert('Hi! I\'m ' + this.name[0] + '.');
+        //     }
+        // };
+
+        // console.log(person.bio());
+        // let objectName = {
+        //     member1Name: member1Value,
+        //     member2Name: member2Value,
+        //     member3Name: member3Value
+        // }
+
+        // console.log(person.age);
+        // console.log(person.interests[0]);
+        // person.bio();
+        // person.email  = 'email@gmail.com';
+        // console.log(person);
+        // let arr = [
+        //     {
+        //         name : 'tri arr',
+        //         age : 14,
+        //         gender : 'male'
+        //     },
+        //     {
+        //         name : 'tri 2',
+        //         age : 14,
+        //         gender : 'male 2'
+        //     },
+        //     {
+        //         name : 'tri 3',
+        //         age : 14,
+        //         gender : 'male 3'
+        //     },
+        // ]
+            // let newMap = person.map(function(age){
+            //     return age;
+            // });
+            // console.log(newMap.map());
+            // let newArrMap = arr.map(function(arr,index){
+            //     return {
+            //         id : index,
+            //         name : arr.name,
+            //         age : arr.age,
+            //         coin : 100 + index
+            //     }
+            // });
+            // console.log(newArrMap);
+            // let result = 0;
+            // for(let i = 0; i< newArrMap.length; i++){
+            //     result += newArrMap[i].coin;
+            // }
+            // console.log(result);
+
+            // let result = newArrMap.reduce(coin);
+            // console.log(result);
+
+            let arr = [
+                {
+                    name : 'tri 18+',
+                    age : 18,
+                    gender : 'male',
+                    interests: 'choi gai',
+                    coin: 1200
+                },
+                {
+                    name : 'Minh ml',
+                    age : 19,
+                    gender : 'female',
+                    interests: 'hiep dam',
+                    coin: 1200
+
+                },
+                {
+                    name : 'Phong db',
+                    age : 20,
+                    gender : 'male',
+                    interests: 'sat thu',
+                    coin: 1200
+
+                },
+            ]
+            let i = 0;
+                function coin (accumulator,currentValue, currentIndex){
+                    i++
+                    console.table({
+                        'luot chay :' : i,
+                        'bien tich tru :': accumulator
+                    })
+                }
+
+            let result = arr.reduce(coin,[]);
+            // function anhXa(arr,index){
+            //     return `<h2> ${arr.name} </h2>`
+            // }
+            //     let newArr = arr.map(anhXa);
+            //     console.log(newArr.join(' '));
+                // arr[1].shift();
+                // arr[0].unshift('add')
+                // arr[3].indexOf('z')
+                // console.log(arr[2].includes(7));
+               
+                // console.log( arr.slice(0,2));
+                // arr[0].splice(1,3,'vitri1')
+                // arr.slice(0,2)
+                // console.log(arr);
+                // console.log(arr);
+                // console.log(arr[3].indexOf('1'));
+
+            // let arr1 = [5435212]
+            // arr = arr.toString();
+            // let newArr = arr.concat(arr1);
+          
+            // arr.push(push());
+            // arr.pop();
+            
+        
+            
+        
+    </script>
+</body>
+
+</html>
