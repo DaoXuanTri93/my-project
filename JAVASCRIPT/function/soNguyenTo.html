@@ -15,21 +15,21 @@
             if (number == 2) {
                 return true;
             } else if (number > 2) {
-                for (let i = 2; i < number; i++) {
+                for (let i = 2; i <= number; i++) {
                     if (number % i == 0) {
                         return false;
+                    } else if(i == (number-1)){
+                        return true;
                     }
                 }
             }
-            return true;
         }
         let number = 2;
         let count = 0;
-        let checkGioiHan = 10;
+        let checkGioiHan = 20;
         while (count < checkGioiHan) {
-            checkSoNguyenTo(number);      
-            
-            if (true) {
+            checkSoNguyenTo(number);
+            if (checkSoNguyenTo(number) == true) {
                 document.write(number + '<br>');
                 count++;
             }
