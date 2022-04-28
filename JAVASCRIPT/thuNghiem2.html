@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Temperature{
+            constructor(valuedoC){
+                this.valuedoC = valuedoC
+            }
+            chuyenSangDoF(){
+                return `${9*this.valuedoC /5+32}`;
+            }
+            chuyenSangDoK(){
+                return `${this.valuedoC + 273.15} `;
+            }
+        }
+let temperature = new Temperature(30);
+console.log(temperature.chuyenSangDoK());
+console.log(temperature.chuyenSangDoF());
+    </script>
+</body>
+</html>

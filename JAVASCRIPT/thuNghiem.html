@@ -7,43 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .gender3 {
-            background-color: azure;
-        }
-        .gender1 {
-            background-color: blueviolet;
-        }
-        .gender2 {
-            background-color: rgb(43, 226, 73);
-        }
+
     </style>
 </head>
 
 <body>
-    <select id="gender" onchange="genderChanged(this)">
-        <option class="gender1">chon</option>
-        <option class="gender2">Nam</option>
-        <option class="gender3">Nu</option>
-        <p id="show"></p>
-    </select>
     <script>
-         function genderChanged(obj)
-            {
-                alert('a')
-                var message = document.getElementById('show');
-                var value = obj.value;
-                if (value === ''){
-                    message.innerHTML = "Bạn chưa chọn giới tính";
-                }
-                else if (value === 'nam'){
-                    message.innerHTML = "Bạn đã chọn giới tính nam";
-                }
-                else if (value === 'nu'){
-                    message.innerHTML = "Bạn đã chọn giới tính nữ";
-                }
+        class Rectangle {
+            constructor(length,width){
+                this.length = length,
+                this.width = width   
             }
+            dienTich(){
+                    return `${this.length * this.width} `;
+                }
+                chuVi(){
+                    return `${2 * (this.length + this.width)}`;
+                }
+        }
 
-        
+let rectangle = new Rectangle(8,3);
+console.log(rectangle.chuVi());
     </script>
 </body>
 
