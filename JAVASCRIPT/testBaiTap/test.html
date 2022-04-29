@@ -9,76 +9,32 @@
 </head>
 
 <body>
-
-    <section>
-        <label>Test are</label> <br>
-        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
-        <button onclick="showMessage()">click</button>
-    </section>
-
-
-
-
+    <!-- <h1 class="heading" onclick="heading(event)">click me</h1> -->
     <script>
-        //  var a=new Array(),n="";
-        //     a[1]='T';a[2]='Ô';a[3]='I';a[4]=' ';a[5]='L';a[6]='À';a[7]=' ';a[8]='M';a[9]='Ộ';a[10]='T';a[11]=' ';a[12]='Đ';a[13]='Ứ';a[14]='A';a[15]=' ';a[16]='N';a[17]='G';a[18]='Ố';a[19]='C';a[20]='!';a[21]='!';a[22]='!';
-        //     function typeTextarea(){
-        //         t = document.f.txt.value;
-        //         j = t.length;
-        //         if(j > 0)
-        //         {
-        //             for(var i=1; i<=j; i++)
-        //             {
-        //                 n = n + a[i];
-        //                 if(i == 22)
-        //                 {
-        //                     document.f.txt.value = "";
-        //                     n = "";
-        //                 }
-        //             }
-        //         }
-        //         document.f.txt.value = n;
-        //         n="";
-        //         setTimeout("typeTextarea()", 10000);
-        //         return false;
-        //     }
-        // function add(a, b) {
-        //     return a + b;
+
+
+
+        // function handleMulitiple(n1, n2) {
+        //     return n1 * n2;
         // }
-        // let a = 'n';
-        // let b = 'a';
-        // console.log(add(a,b));
-        function processConfirm(answer) {
-            let result = "";
-            if (answer) {
-                result = "Excellent. We'll play a nice game of chess.";
-            } else {
-                result = "Maybe later then.";
-            }
-            return result;
-        }
 
-        let confirmAnswer = confirm("Shall we play a game?");
-        let theAnswer = processConfirm(confirmAnswer);
-        alert(theAnswer);
-        let a = [];
-        a[1] = 'T'; a[2] = 'Ô'; a[3] = 'I';
-        let str = '';
-        // let d = arr.length;
-        function showMessage() {
-            // alert('aaaaaaaa')
-            // console.log(arr);              
-            for (let i = 0; i < arr.length; i++) {
-                str += arr[i];
+        // function multiple(para) {
+        //     return para(5, 7)
+        // }
+        // multiple(handleMulitiple)
 
-                if (i == 3) {
-                    document.f.txt.value = '';
-                    str = '';
-                }
-            }
-            document.f.txt.value = str;
-        }
-            // showMessage();
+
+        // function tinhTong ( a , b , c){
+        //     return a + b + c 
+        // }
+        // function hienthi(show){
+        //     return show(1,2,3);
+        // }
+        // console.log(hienthi(tinhTong));
+
+        let arr = [ 1,2,3,4,4,5]
+        arr.push(6)
+        console.log(arr);
     </script>
 </body>
 

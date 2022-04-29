@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        table,
+        tbody,
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            /* background-color: rgba(9, 155, 252, 0.23); */
+        }
+
+        .contaier {
+            width: 500px;
+            /* background-color: rgba(195, 182, 182, 0.279); */
+            background-color: rgb(38, 60, 43,.7);
+            color: rgba(0, 255, 64, 0.866);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .listProducts {
+            width: 100%;
+        }
+
+        .header {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tableStick {
+            border-collapse: collapse;
+
+            text-align: center;
+            width: 100%;
+        }
+
+        .bodyTable>tr :first-child>td {
+            color: rgb(183, 7, 7);
+            background-color: red;
+        }
+
+        .btn {
+            background-color: rgba(0, 255, 64, 0.866);
+            color: rgb(38, 60, 43);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: rgb(38, 60, 43);
+            color: rgba(0, 255, 64, 0.866);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .addProduct-hide {
+
+            display: none;
+        }
+
+        .addProduct-show {
+            text-align: center;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .x-btn:hover {
+            background-color: red;
+            color: aliceblue;
+            transition: 0.3s;
+            cursor: pointer;
+
+        }
+
+        .x-btn {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            /* line-height: 50%; */
+        }
+
+        .span-icon {
+            color: rgba(0, 0, 0, 0.866);
+
+        }
+
+        .span-icon:hover {
+            color: rgba(0, 255, 64, 0.866);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        #seach {
+            width: 100%;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contaier">
+        <div class="listProducts">
+            <table class="tableStick">
+                <thead>
+                    <div class="header">
+                        <label for="product">Product Name</label>
+                        <input type="text" id="product" class="nameProduct" onkeydown="enterProduct(event)">
+                        <button onclick="changeProduct()" class="btn">Add</button>
+                        <br> <br>
+                        
+                        <input type="search" id="seach" oninput="searchProducts(event)">
+                        <button class="btn search" >Search</button>
+                        
+                    </div>
+                    <tr>
+                        <td>
+                            <h3>ID</h3>
+                        </td>
+                        <td>
+                            <h3>Product
+                                <span class="span-icon" id="tangDan" title="Tang dan"
+                                    onclick="tangDan()">&#x25B2;</span>
+                                <span class="span-icon" id="giamDan" title="Giam dan" onclick="giamDan()">&#x25BC;</span>
+                            </h3>
+                        </td>
+                        <td>
+                            <h3>Action</h3>
+                        </td>
+                    </tr>
+                </thead>
+                <tbody class="bodyTable">
+                </tbody>
+            </table>
+        </div>
+        <div class="addProduct-show">
+            <div class="addProduct-hide" id="addProduct-hide">
+                <label for="addproduct">Change Product</label>
+                <input type="text" id="addproduct-add" class="nameProduct" onkeydown="enterProduct(event)">
+                <button class="btn" id="update">update</button>
+                <button class="btn x-btn" onclick="updateNameProduct()"> X </button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let products = [
+        'Iphone',
+        'Nokia',
+        'SamSung',
+    ];
+    function renderProducts(data) {
+        let tbproduct = document.querySelector('.bodyTable');
+
+        let htmls = data.map(function (product, index) {
+            return ` <tr>
+                        <td>${index + 1}</td>
+                        <td>${product}</td>
+                        <td>
+                            <button class="btn" onclick = "editProduct(${index})">Edit</button>
+                            <button class="btn" onclick="removeProduct(${index})">Remove</button>
+                        </td>
+                    </tr>
+                    `
+        })
+        tbproduct.innerHTML = htmls.join('');
+    }
+    function changeProduct() {
+        // alert('a')
+        let changeProduct = document.querySelector('.nameProduct').value;
+        if (changeProduct.trim() !== '') {
+            products.push(changeProduct);
+            renderProducts(products);
+            resetInput();
+            document.querySelector('.nameProduct').focus();
+        } else {
+            alert('Xin nhap Product Name');
+            document.querySelector('.nameProduct').focus();
+        }
+    }
+    function enterProduct(e) {
+        // alert('a')
+        if (e.keyCode == 13) {
+            changeProduct();
+        }
+    }
+    function resetInput() {
+        document.querySelector('.nameProduct').value = '';
+    }
+    function removeProduct(index) {
+        let confrim = window.confirm(`ban co chac chan muon xoa ${products[index]} nay khong ?`);
+        if (confrim) {
+            products.splice(index, 1);
+        }
+        renderProducts(products);
+    }
+    // function editProduct(index) {
+    //     let edit = document.querySelector('.nameProduct').value = prompt('nhap ten can thay doi')
+    //     products[index] = edit;
+    //     renderProducts();
+    //     resetInput();
+    // }
+    function editProduct(index) {
+        // alert(index);
+        let edit = document.querySelector('#addProduct-hide').classList.remove('addProduct-hide')///asdasdsa
+        let editProduct = document.querySelector('#addproduct-add').value = products[index];
+        document.querySelector('#update').onclick = function () {
+            let changeProduct2 = document.querySelector('#addproduct-add').value;
+            if (changeProduct2.trim() !== '') {
+                products[index] = changeProduct2;
+                renderProducts(products);
+                updateNameProduct();
+                document.querySelector('#addproduct-add').focus();
+            } else {
+                alert('Xin nhap Product Name');
+                document.querySelector('#addproduct-add').focus();
+            }
+        }
+    }
+    function updateNameProduct() {
+        document.querySelector('#addProduct-hide').classList.add('addProduct-hide');
+        renderProducts(products);
+    }   
+    function tangDan() {
+        products.sort();
+        renderProducts(products);
+    }
+    function giamDan(){
+        products.reverse();
+        renderProducts(products);
+    }
+    function searchProducts(e){
+        let key = e.target.value;
+       let result =  products.filter(function(product,index){
+            return product.toLowerCase().indexOf(key.toLowerCase()) != -1;
+        })
+       console.log(result);
+       renderProducts(result);
+    }
+    renderProducts(products);
+</script>
+
+</html>

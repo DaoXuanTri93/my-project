@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .table {
+            text-align: center;
+
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .add-name {
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <div class="div-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td><input type="number" class="add-name id" min="0"></td>
+                    <td><input type="text" class="add-name name"></td>
+                    <td><input type="number" class="add-name price" min="0"></td>
+                    <td><input type="number" class="add-name quantity" min="0"></td>
+                    <td><button onclick="addProducts()">Add</button></td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>NAME</td>
+                    <td>PRICE</td>
+                    <td>QUANTITY</td>
+                    <td>ACTION</td>
+                </tr>
+
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function ClassPhone(id, name, price, quantity) {
+            this.id = id,
+                this.name = name,
+                this.price = price,
+                this.quantity = quantity
+        }
+
+        let products = [
+            new ClassPhone(1, 'tri', 1500, 10),
+            new ClassPhone(2, 'top', 2500, 9),
+            new ClassPhone(3, 'nga', 6000, 3),
+        ]
+        // console.log(newClassPhone[0].id);
+        function renderProducts() {
+            let render = document.querySelector('.table > tbody');
+            let htmls = products.map(function (value, index) {
+                return `
+                <tr>
+                    <td  id="editId">${value.id}</td>
+                    <td id="editName">${value.name}</td>
+                    <td  id="editPrice">${value.price}</td>
+                    <td  id="editQuantity">${value.quantity}</td>
+                    <td><button  onclick ="deleteProduct(${index})">Delete</button></td>
+                     <td><button onclick ="editProduct(${index})" id="editProduct">Edit</button></td>
+                </tr>
+                `
+            })
+            render.innerHTML = htmls.join('');
+        }
+        function addProducts() {
+            let id = document.querySelector('.id').value;
+            let name = document.querySelector('.name').value;
+            let price = document.querySelector('.price').value;
+            let quantity = document.querySelector('.quantity').value;
+            if (id !== '' && name !== '' && price !== '' && quantity !== '') {
+                let total = products.push(new ClassPhone(id, name, price, quantity));
+                resetInput();
+                renderProducts(products);
+            } else {
+                alert('nhap truong vo gium cai')
+            }
+        }
+        function resetInput() {
+            let id = document.querySelector('.id').value = '';
+            let name = document.querySelector('.name').value = '';
+            let price = document.querySelector('.price').value = '';
+            let quantity = document.querySelector('.quantity').value = '';
+        }
+        function deleteProduct(index) {
+            let confirm = window.confirm('ban co muon xoa khong ?');
+            if (confirm) {
+                products.splice(index, 1);
+                renderProducts(products);
+            }    
+        }
+        function editProduct(index){
+            
+        }
+        renderProducts(products);
+    </script>
+</body>
+
+</html>
