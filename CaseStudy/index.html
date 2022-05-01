@@ -47,80 +47,12 @@
                 </div>
                 <div class="box-add">Add a card</div>
             </div>
-            <div class="box-column">
-                <div class="box-title">Products</div>
-                <div class="box-group">
-                    <div class="box-text">thu 2</div>
-                    <div class="box-text">thu 2</div>
-                </div>
-                <div class="box-add">Add a card</div>
-            </div>
-            <div class="box-column">
-                <div class="box-title">Products</div>
-                <div class="box-group">
-                    <div class="box-text">thu 2</div>
-                    <div class="box-text">thu 2</div>
-                </div>
-                <div class="box-add">Add a card</div>
-            </div>
         </div>
     </div>
 
     <!-- boxx edit -->
-    <div class="box-edit d-none-edit" >
-        <div class="box-edit-name">
-            <h2 class="productEdit"></h2>
-        </div>
-        <div class="box-edit-stick">
-            <div class="box-edit-products">
-                <h2>Desciption</h2>
-                <textarea name="" id="" cols="30" rows="2"></textarea>
-                <div></div>
-                <button>Edit</button>
-                <h2>Tags</h2>
-                <hr>
-                <h2>Add comment</h2>
-                <textarea name="" id="" cols="30" rows="2" class="box-edit-comment" onkeydown="pressEnterEdit(event)"></textarea>
-                <div></div>
-                <button onclick="showEdit()" >Add</button>
-                <button onclick="removeProduct()">Delete</button>
-                <div class="box-edit-comment">
-                    <h2>Comment</h2>
-                </div>
-                <p class="comment"></p>
-            </div>
-            <div class="box-edit-delete">
-                <h2>Color</h2>
-                <select class="box-edit-color" onchange="changeColor()">
-                    <option >--Color--</option>
-                    <option value="Blue" class="box-edit-blue">Blue</option>
-                    <option value="Yellow" class="box-edit-option" >yellow</option>
-                    <option value="Red" class="box-edit-option">red</option>
-                </select>
-                <div>
-                    <div >
-                        <label for="">start time</label>
-                    </div>
-                    <div >
-                        <input type="date" class="box-edit-date">
-                    </div>
-                    <div>
-                        <label for="">start time</label>
-                    </div>
-                    <div >
-                        <input type="date" class="box-edit-date">
-                    </div>
-                    <div>
-                        <div>Set Time</div>
-                        <select name="" id="" class="box-edit-date">
-                            <option value="minutes">minutes</option>
-                            <option value="hours">hours</option>
-                            <option value="days">days</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="editContainer">
+
     </div>
     <script src="main.js">
 

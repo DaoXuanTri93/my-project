@@ -45,11 +45,12 @@
 .box-text {
     background-color: azure;
     margin: 5px 0;
-    height: 32px;
+    height: 50px;
     padding: 10px;
     padding-left: 20px;
     position: relative;
-    line-height: 50%;
+    line-height: 100%;
+    word-wrap: break-word;
 }
 .box-text-color-red {
     background-color: red;
