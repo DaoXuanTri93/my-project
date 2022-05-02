@@ -1,5 +1,8 @@
 
 class Products {
+    href = '';
+    color = '';
+    comment ='';
     constructor(id, name, date,date2) {
         this.id = id;
         this.name = name;
@@ -10,16 +13,13 @@ class Products {
 }
 const key_data = 'product-data';
 let products = [];
-
-
-
 function renderProducts() {
     let product = document.querySelector('.box-group');
     let map = products.map(function (product) {
         return ` 
         <div class="box-text" onclick="hideEdit(${product.id})" draggable="true" id="${product.id}">
             ${product.name}
-            <div class="box-text-color color-${product.id}" ></div>
+            <div class="box-text-color color-${product.id} box-text-color-${product.color}" ></div>
             <div class="box-text-date add-date-${product.id}">${product.date} ${product.date2}</div>
         </div>    
         `
@@ -30,9 +30,9 @@ function renderProducts() {
 function init(){
     if(getData(key_data) == null){
         products = [
-            new Products(1, 'thu2', '', ''),
-            new Products(2, 'thu3', '', ''),
-            new Products(3, 'thu4', '', ''),
+            new Products(1, 'thu2', ' ', ' '),
+            new Products(2, 'thu3', ' ', ' '),
+            new Products(3, 'thu4', ' ', ' '),
         ];
         setData(key_data,products);
     } else {
@@ -51,7 +51,7 @@ function addProducts() {
     let maxId = getId() + 1;
     let area = document.querySelector('#textarea').value;
     if (area.trim() != '') {
-        products.push(new Products(maxId, area));
+        products.push(new Products(maxId, area, '',''));
         // showTextArea();
         setData(key_data,products);
         renderProducts();
@@ -86,12 +86,9 @@ function showTextArea() {
     let hideTextArea = document.querySelector('.box-textarea').classList.add('d-none');
 }
 function hideEdit(productsId) {
-    // console.log(productsId);
-    // console.log(name);
     let product = getProductById(productsId);
-
     let str = `
-    <div class="box-edit d-none-edit" >
+    <div class="box-edit" >
     <div class="box-edit-name">
         <h2 class="productEdit"></h2>
     </div>
@@ -99,19 +96,23 @@ function hideEdit(productsId) {
         <div class="box-edit-products">
             <h2>Name</h2>
             <textarea name="" id="" cols="30" rows="2" class ="edit-name" >${product.name}</textarea>
-            <div></div>
-                <button onclick="editProduct(${productsId})">Edit</button>
+                <div>link </div>
+                <div><a class="link" target="_blank" href="${product.href}">${product.href.replace("https://","").replace("http://","")}</a>
+                </div>
+                <textarea name="" id="" cols="30" rows="2" class ="edit-link" >${product.href}</textarea>
+                <div><button onclick=" editLink(${productsId})"> Change Link </button></div>
+            <div><button onclick="editProduct(${productsId})">Edit</button></div>
             <h2>Tags</h2>
             <hr>
             <h2>Add comment</h2>
-            <textarea name="" id="" cols="30" rows="2" class="box-edit-comment" onkeydown="pressEnterEdit(event)"></textarea>
-            <div></div>
+            <div><textarea name="" id="" cols="30" rows="2" class="box-edit-comment" onkeydown="pressEnterEdit(event)"></textarea>
+           </div>
             <button onclick="editProduct(${productsId})" >Update</button>
             <button onclick="removeProduct(${productsId})">Delete</button>
             <div class="box-edit-comment">
                 <h2>Comment</h2>
             </div>
-            <p class="comment"></p>
+            <p class="comment">${product.comment}</p>
         </div>
         <div class="box-edit-delete">
             <h2>Color</h2>
@@ -148,8 +149,7 @@ function hideEdit(productsId) {
 </div>
     `;
     document.getElementById('editContainer').innerHTML = str;
-    let hideEdit = document.querySelector('.box-edit').remove('d-none-edit');
-console.log(hideEdit);
+// console.log(hideEdit);
 }
 function showEdit() {
     let hideEdit = document.querySelector('.box-edit').classList.add('d-none-edit');
@@ -158,28 +158,30 @@ function showEdit() {
 
 // change color tags
 function changeColor(pdtId) {
-    // let changeColor = document.getElementById(`color-${pdtId}`);
-    // let changeId = products.find(function(pdt){
-    //     return pdt.id;
-    // })
-    // console.log(changeId);
+    let product = getProductById(pdtId);
+    console.log(product);
     let changeColor = document.querySelector(`.color-${pdtId}`);
-    // console.log(changeColor);
     let color = document.querySelector('.box-edit-color').value;
     if (color == 'Red') {
+        product.color = 'red';
         changeColor.classList.add('box-text-color-red');
         changeColor.classList.remove('box-text-color-yellow');
         changeColor.classList.remove('box-text-color-blue');
     } else if (color == 'Yellow') {
+        product.color = 'yellow';
+
         changeColor.classList.add('box-text-color-yellow');
         changeColor.classList.remove('box-text-color-red');
         changeColor.classList.remove('box-text-color-blue');
     } else if (color == 'Blue') {
+        product.color = 'blue';
+
         changeColor.classList.add('box-text-color-blue');
         changeColor.classList.remove('box-text-color-yellow');
         changeColor.classList.remove('box-text-color-red');
     }
-    // setData(key_data,products);
+    setData(key_data,products);
+    console.log(products);
 }
 // ----------------- end color
 
@@ -226,20 +228,55 @@ function getProductById(pdtId){
     })
 }
 function editProduct(pdtId){
-    document.querySelector('.box-edit').classList.remove('d-none-edit');
+    document.querySelector('.box-edit').classList.add('d-none-edit');
     let product = getProductById(pdtId);
     let productName = document.querySelector('.edit-name').value;
     let productDate = document.querySelector('.box-edit-date-start').value;
     let productDate2 = document.querySelector('.box-edit-date-end').value;
+    let comments = document.querySelector('.box-edit-comment').value;
+product.comment = comments;
+document.querySelector('.comment').innerHTML = product.comment;
+   console.log(product);
+
     product.name = productName;
     product.date = productDate;
     product.date2 = productDate2;
     setData(key_data,products)
     renderProducts();
 }
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+function editLink(pdtId){
+    
+    let product = getProductById(pdtId);
+    let link = document.querySelector('.edit-link').value;
+    console.log(link);
+    product.href = link;
+    document.querySelector('.link').innerHTML = product.href;
+    console.log(product);
+    setData(key_data,products)
+}
+
+// keo thả
+
+
 init();
 renderProducts();
 resetProducts();
+hideEdit();
+
 
 
 
