@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
+    font-size: 15px;
 }
 
 .container {
@@ -10,31 +12,41 @@
     /* position: relative; */
 }
 
+#editContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .box-row {
     width: 100%;
-    height: 500px;
-    background-color: rgb(29, 186, 210);
+    height: 640px;
+    background-color: rgb(32 216 255 / 74%);
     padding: 20px;
     display: flex;
+    margin-bottom: 10px;
 }
 
 .box-column {
     float: left;
-    margin-left: 30px;
-    border: 2px solid black;
-    background-color: rgba(65, 44, 54, 0.534);
+    margin: 0 15px;
+    border: 1px solid white;
+    background-color: rgb(7 129 154);
     border-radius: 5px;
     padding: 10px;
     height: 100%;
     width: 272px;
     overflow-y: auto;
+    flex: 1;
 }
 
 .box-title {
     width: 100%;
-    background-color: aliceblue;
+    color: #fff;
     font-size: 30px;
-    padding: 8px;
+    padding: 5px;
+    text-align: center;
 }
 
 .box-group {
@@ -44,31 +56,42 @@
 }
 
 .box-text {
-    background-color: azure;
-    margin: 5px 0;
+    background-color: rgb(255 255 255 / 82%);
+    margin: 8px 0;
     height: auto;
     padding: 10px;
     padding-left: 20px;
     position: relative;
     line-height: 100%;
     word-wrap: break-word;
+    cursor: pointer;
+    border-top-right-radius: 5px 10px;
+    border-bottom-right-radius: 5px 10px;
+    transition-duration: 0.5s;
+}
+
+.box-text:hover {
+    transition: 0.5s;
+    background-color: rgba(9, 86, 101, 0.422);
+    color: #fff;
+    border: 1px solid rgb(255 255 255 / 82%);
+    
 }
 
 .box-text-color-red {
-    background-color: red;
+    background-color: #f90202c4;
     height: 100%;
     width: 10px;
-    /* display: inline-block; */
     position: absolute;
     left: 0;
     top: 0;
 }
 
-.box-text-color-blue {
-    background-color: rgb(16, 0, 242);
+.box-text-color-green {
+    background-color: rgb(7 255 0);
+    height: 100%;
     height: 100%;
     width: 10px;
-    /* display: inline-block; */
     position: absolute;
     left: 0;
     top: 0;
@@ -78,16 +101,43 @@
     background-color: rgb(235, 252, 0);
     height: 100%;
     width: 10px;
-    /* display: inline-block; */
     position: absolute;
     left: 0;
     top: 0;
 }
+.box-edit-option {
+    background-color: #f2f2f2;
+    /* background-color: rgb(255 255 255 / 82%); */
 
+}
+/* .green1 {
+    background-color: red;
+}
+.geen1:hover {
+    background-color: rgb(7 255 0);
+}
+.yellow:hover {
+    background-color: rgb(235, 252, 0);
+}
+.red:hover {
+    background-color: #f90202c4;
+
+} */
 .box-add {
     background-color: bisque;
     width: 100%;
     padding: 8px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.box-add:hover {
+    /* transition: 0.5s; */
+    background-color: rgba(9, 86, 101, 0.422);
+    color: #fff;
+    border: 1px solid rgb(255 255 255 / 82%);
+    ;
 }
 
 .box-textarea {
@@ -95,14 +145,66 @@
 }
 
 .btn {
-    /* float: right; */
-    background-color: rgb(38, 250, 5);
+    border: 1px solid white;
+    background-color: rgb(255 255 255 / 82%);
+    cursor: pointer;
     padding: 5px;
+    transition-duration: 0.5s;
+    border: none;
+}
+
+.btn:hover {
+    transition: 0.4s;
+    background-color: rgba(9, 86, 101, 0.422);
+    color: #fff;
+    border: 1px solid rgb(255 255 255 / 82%);
+    ;
+}
+
+
+.btn-x:hover{
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+}
+.btn-delete:hover {
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+}
+
+.create {
+    width: 47%;
+}
+
+.create:hover {
+    background-color: green;
+}
+
+.cancel {
+    width: 50%;
 }
 
 .cancel:hover {
     background-color: red;
 }
+
+.btn-update,
+.btn-delete,
+.btn-changelink,
+.btn-x {
+    border-radius: 3px;
+    float: right;
+    padding: 8px;
+    border: 1px solid rgb(2, 57, 68);
+    font-size: 15px;
+}
+
+.btn-update {
+    margin-right: 10px;
+}
+
+.btn-changelink {}
 
 #textarea {
     width: 100%;
@@ -114,31 +216,55 @@
 
 /* box - edit */
 .box-edit {
-    background-color: rgb(241, 236, 230);
-    color: rgb(45, 50, 55);
+    color: rgb(1, 6, 10);
     margin: 0 auto;
     width: 900px;
-    height: 500px;
+    border-radius: 5px;
+    /* background: darkblue; */
+    border: 2px solid rgb(2, 57, 68);
+    background-color: #f2f2f2;
+
+}
+
+.box-edit-h2 {
+    color: rgb(11 145 173);
+    padding: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: rgb(11 145 173);
+}
+
+.link:hover {
+    color: rgb(0, 200, 255);
 }
 
 .box-edit-name {
     padding: 10px;
 }
 
-.box-edit-products {
-    background-color: aquamarine;
-    height: 300px;
+
+.box-edit-delete {
+    padding: 20px;
+    border-radius: 5px;
     width: 50%;
+    height: 530px;
+    /* background-color: bisque; */
+    background-color: #f2f2f2;
+}
+
+.box-edit-products {
+    padding: 20px;
+    /* background-color: aquamarine; */
+    background-color: #f2f2f2;
+    height: 530px;
+    width: 50%;
+    border-radius: 5px;
 }
 
 .box-edit-stick {
     display: flex;
-}
-
-.box-edit-delete {
-    width: 50%;
-    height: 300px;
-    background-color: bisque;
 }
 
 .box-edit-color {
@@ -146,13 +272,48 @@
     height: 50px;
 }
 
-.box-edit-option {
-    background-color: aquamarine;
+.input {
+    margin: 5px 0;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
+
+.input:hover {
+    background-color: rgba(9, 86, 101, 0.422);
+}
+.textarea {
+    height: 50px;
+    margin: 5px 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.textarea:hover {
+    background-color: rgba(9, 86, 101, 0.422);
+}
+.block-row {
+    display: inline-block;
+    background-color: rgb(196, 205, 255);
+}
+
+
 
 .box-edit-date {
     width: 100%;
     padding: 10px;
+    height: 50px;
+}
+
+.box-edit-date-start,
+.box-edit-date-end {
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+    margin: 5px 0;
+}
+.box-text-date {
+    margin-top: 10px;
 }
 
 .d-none-edit {
@@ -186,4 +347,5 @@
     overflow: hidden;
     width: 100%;
 }
+
 /* ==================================================== */
