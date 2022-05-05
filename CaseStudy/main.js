@@ -1,14 +1,15 @@
 
 class TASKS {
-    href = '';
-    // color = '';
-    comment = '';
+    
     constructor(id, name, color, date, date2) {
         this.id = id;
         this.name = name;
         this.color = color;
         this.date = date;
         this.date2 = date2;
+        this.href = '';
+    // color = '';
+        this.comment = '';
     }
 }
 
@@ -84,12 +85,17 @@ function init() {
     if (getData(key_data) == null) {
         listTasks = [
             //constructor(id, name,color, date, date2)
-            new TASKS(1, 'khoa hoc 1', 'red', '', ''),
-            new TASKS(2, 'java 2', 'yellow', '', ''),
-            new TASKS(3, 'php 3', 'green', '', ''),
-            new TASKS(4, 'khoa hoc 4', '', '', ''),
-            new TASKS(5, 'java 5', '', '', ''),
-            new TASKS(6, 'php 6', '', '', ''),
+            new TASKS(1, '[Bài đọc] Thẻ tạo liên kết: a', 'red', '', ''),
+            new TASKS(2, '[Bài đọc] Các thẻ tiêu đề h1, h2, h3, h4, h5, h6', 'yellow', '', ''),
+            new TASKS(3, '[Bài đọc] Thẻ tạo đoạn văn bản: p', 'green', '', ''),
+            new TASKS(4, '[Thực hành] Tạo bảng cơ bản', '', '', ''),
+            new TASKS(5, '[Thực hành] Tạo bảng nâng cao', '', '', ''),
+            new TASKS(6, 'Hoàn thành khoá học "Học cách học"', '', '', ''),
+            new TASKS(7, '[Bài tập] Tạo form đơn giản', '', '', ''),
+            new TASKS(8, 'Hoàn thành khoá học "Hoàn thành mọi việc với Kanban"', '', '', ''),
+            new TASKS(9, '[Bài tập] Tạo giao diện form đăng ký người dùng"', '', '', ''),
+            new TASKS(10, '[Bài tập] Tạo bảng đơn giản', '', '', ''),
+            new TASKS(11, '[Bài đọc] Tạo biểu mẫu cho trang web', '', '', ''),
         ];
 
         setData(key_data, listTasks);
@@ -104,9 +110,9 @@ function init1() {
     if (getData(key_data_today) == null) {
 
         listTaskToday = [
-            new TASKS(7, 'Today 7', 'red', '', ''),
-            new TASKS(8, 'Today 8', 'yellow', '', ''),
-            new TASKS(9, 'Today 9', 'green', '', '')
+            // new TASKS(7, 'Today 7', 'red', '', ''),
+            // new TASKS(8, 'Today 8', 'yellow', '', ''),
+            // new TASKS(9, 'Today 9', 'green', '', '')
         ];
         // setData(key_data, listTasks);
         setData(key_data_today, listTaskToday);
@@ -120,9 +126,9 @@ function init2() {
     if (getData(key_data_Doing) == null) {
 
         listTaskDoing = [
-            new TASKS(10, 'Doing 10', ' ', ' ', ''),
-            new TASKS(11, 'Doing 11', ' ', ' ', ''),
-            new TASKS(12, 'Doing 12', ' ', ' ', '')
+            // new TASKS(10, 'Doing 10', ' ', ' ', ''),
+            // new TASKS(11, 'Doing 11', ' ', ' ', ''),
+            // new TASKS(12, 'Doing 12', ' ', ' ', '')
         ];
         // setData(key_data, listTasks);
         setData(key_data_Doing, listTaskDoing);
@@ -136,9 +142,9 @@ function init3() {
     if (getData(key_data_Done) == null) {
 
         listTaskDone = [
-            new TASKS(13, 'Done 13', ' ', ' ', ''),
-            new TASKS(14, 'Done 14', ' ', ' ', ''),
-            new TASKS(15, 'Done 15', ' ', ' ', '')
+            // new TASKS(13, 'Done 13', ' ', ' ', ''),
+            // new TASKS(14, 'Done 14', ' ', ' ', ''),
+            // new TASKS(15, 'Done 15', ' ', ' ', '')
         ];
         // setData(key_data, listTasks);
         setData(key_data_Done, listTaskDone);
@@ -207,7 +213,7 @@ function hideEdit(tasksId) {
                     <div><button onclick=" editLink(${tasksId})" class="btn btn-changelink"> Change Link </button></div>
     
                 <h2 class="box-edit-h2">Add Note</h2>
-                <div><textarea cols="30" rows="2" class="box-edit-comment textarea" onkeydown="pressEnterEdit(event)"></textarea>
+                <div><textarea cols="30" rows="2" class="box-edit-comment textarea" onkeydown="pressEnterEdit(event)" value="${task.comment}">${task.comment}</textarea>
                </div>
                <button onclick="removetask(${tasksId})" class="btn btn-delete">Delete</button>
                 <button onclick="editTask(${tasksId})" class="btn btn-update">Update</button>
@@ -572,16 +578,21 @@ function changeColorDone(tasksId) {
 
 // ----------------- end color
 
-function addComment() {
-    let addComment = document.querySelector('.box-edit-comment').value;
-    document.querySelector('.comment').innerHTML = addComment;
-}
+// function addComment() {
+//     let addComment = document.querySelector('.box-edit-comment').value;
+//     document.querySelector('.comment').innerHTML = addComment;
+// }
 function getId() {
-    let taskID = [...listTasks];
+    let arrs = listTasks.concat(listTaskDoing).concat(listTaskToday).concat(listTaskDone);
+
+
+    let taskID = [...arrs];
     let maxId = taskID.sort(function (task1, task2) {
         return task2.id - task1.id
     })[0].id
+    console.log(maxId);
     return maxId;
+    
 
 
 }
