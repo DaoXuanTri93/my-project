@@ -9,6 +9,7 @@ let currentTarget = null
 targetList.forEach(function(target){
     target.addEventListener('dragstart', function(e){
         this.classList.add('dragging');
+        console.log('aaaa');
         currentTarget = this;
     })
     target.addEventListener('dragend', function(e){
